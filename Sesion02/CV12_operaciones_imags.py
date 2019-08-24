@@ -34,7 +34,7 @@ while True:
     blur_img = gray_img 
     blur_img = cv2.GaussianBlur(blur_img, (21, 21), 0) 
     nega_img = cv2.bitwise_not(gray_img)
-    thresh_img = cv2.threshold(blur_img, 30, 255, cv2.THRESH_BINARY)[1]
+    thresh_img = cv2.threshold(blur_img, 127, 255, cv2.THRESH_BINARY)[1]
     thresh_img = cv2.dilate(thresh_img, None, iterations = 2)
 
     # show the one

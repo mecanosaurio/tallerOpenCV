@@ -9,14 +9,11 @@ Created on Fri Aug 23 08:30:26 2019
 @author: E
 """
 
-
-
 import cv2
 
 
 img_filename = 'reaction.jpg'
 nombre_ventana = "CV10_operaciones_con_imagen: escala de gris"
-
 cv2.namedWindow(nombre_ventana)
 
 img = cv2.imread(img_filename, cv2.IMREAD_UNCHANGED)

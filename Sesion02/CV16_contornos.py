@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-
 interspecifics - taller OpenCV
 Sesion 02, Ejemplo 15
 
 Procesamiento de imágenes aplicado al video la camara: 
-    ->trackear posiciones de blobs
+    ->trackear contornos
 
-Created on Sat Aug 24 08:57:04 2019
+Created on Sat Aug 24 11:32:10 2019
 @author: E
 """
 
+
 import cv2
 from time import sleep
+import numpy as np
 
 video = cv2.VideoCapture(0)
 nombre_ventana = "CV15_detector_de_blobs"
@@ -25,7 +26,7 @@ pp=cv2.SimpleBlobDetector_Params()
 pp.minThreshold=208
 pp.maxThreshold=255
 pp.filterByArea=True
-pp.minArea=50
+pp.minArea=100
 pp.maxArea=10000
 pp.filterByColor=True
 pp.blobColor=255
@@ -54,11 +55,14 @@ while True:
         nega_img = cv2.bitwise_not(diff_frame)
         thresh_img = cv2.threshold(blur_img, 60, 255, cv2.THRESH_BINARY)[1]
         thresh_img = cv2.dilate(thresh_img, None, iterations = 2)
-        # detectar
+        # keypoints
         keyPoints = detector.detect(thresh_img)
         for i,po in enumerate(keyPoints):
             print (i, po.pt)
-        #kp_coo = [k.pt for k in keyPoints]
+        #blobs = cv2.drawKeypoints (frame, keyPoints, frame, (0, 0, 255), cv2.cv2.DRAW_MATCHES_FLAGS_DRAW_OVER_OUTIMG)          
+        # contours
+        im2, contours, hierarchy = cv2.findContours(thresh_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        cv2.drawContours(frame, contours, -1, (0,255,0), 3)
 
     # show the one
     if (show_no == 0):
