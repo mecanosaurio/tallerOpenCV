@@ -12,7 +12,7 @@ Created on Thu Aug 22 21:12:29 2019
 import cv2
 from time import sleep
 
-video = cv2.VideoCapture(0)
+video = cv2.VideoCapture(3)
 nombre_ventana = "CV05_pixeles_video_en_vivo"
 nframe = 0;
 ultimo_clic = [0,0]

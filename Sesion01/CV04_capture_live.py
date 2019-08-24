@@ -11,7 +11,7 @@ Created on Thu Aug 22 21:12:29 2019
 import cv2
 from time import sleep
 
-video = cv2.VideoCapture(0)
+video = cv2.VideoCapture(3)
 
 nombre_ventana = "CV04_captura_video_en_vivo"
 

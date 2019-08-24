@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 interspecifics - taller OpenCV
-Sesion 01, Ejemplo 12
+Sesion 02, Ejemplo 12
 
 Procesamiento de imágenes: 
     .escala de gris
@@ -28,7 +28,7 @@ img = cv2.imread(img_filename, cv2.IMREAD_COLOR)
 print('Dimensiones de la imagen:', img.shape)
 
 show_no = 0
-q
+
 while True: 
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
     blur_img = gray_img 

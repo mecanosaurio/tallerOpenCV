@@ -13,6 +13,7 @@ import cv2
 
 nombre_ventana = "CV03_pixeles_de_una_imagen"
 
+
 def detecta_clics(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         #cv2.imshow(nombre_ventana, img)

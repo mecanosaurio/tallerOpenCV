@@ -19,7 +19,7 @@ IP = '127.0.0.1'
 PORT = 8000
 client = udp_client.UDPClient(IP, PORT)
 
-video = cv2.VideoCapture(0)
+video = cv2.VideoCapture(3)
 nombre_ventana = "CV06_OSC_video_en_vivo"
 nframe = 0;
 ultimo_clic = [0,0]
@@ -27,8 +27,8 @@ ultimo_clic = [0,0]
 
 def send_color(r, g, b):
     msg = OscMessageBuilder(address='/CV06/pixel')
-    msg.add_arg(r, 'i')
-    msg.add_arg(g, 'i')
+    #msg.add_arg(r, 'i')
+    #msg.add_arg(g, 'i')
     msg.add_arg(b, 'i')
     m = msg.build()
     print(m.address, m.params)

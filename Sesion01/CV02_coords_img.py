@@ -8,10 +8,10 @@ Created on Thu Aug 22 21:12:29 2019
 @author: E
 """
 
+
 import cv2
 
 nombre_ventana = "CV02_coordenadas_de_la_imagen"
-
 
 def detecta_clics(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -21,6 +21,7 @@ def detecta_clics(event, x, y, flags, param):
         cv2.imshow(nombre_ventana, img)
         print('Click en:', mouse_pos)
         
+
 
 cv2.namedWindow(nombre_ventana)
 cv2.setMouseCallback(nombre_ventana, detecta_clics)
